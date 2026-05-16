@@ -1,6 +1,6 @@
 <h1>ExpNo 1 :Developing AI Agent with PEAS Description</h1>
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+<h3>Name: Gowtham C </h3>
+<h3>Register Number: 212224240046</h3>
 
 
 <h3>AIM:</h3>
@@ -40,3 +40,52 @@
 <p>Treat unhealthy patients in each room. And check for the unhealthy patients in random room</p>
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
+
+## Program:
+
+```python
+import random
+
+class MedicinePrescribingAgent:
+    def __init__(self):
+        self.performance = 0
+        self.current_room = 0  # Start in room 0
+    
+    def sense_temperature(self):
+        """Simulate patient temperature in the current room"""
+        return random.uniform(97.0, 102.0)  # random temp between 97 and 102
+    
+    def treat_patient(self, temperature):
+        """Check and treat patient if unhealthy"""
+        if temperature > 98.5:
+            print(f"Room {self.current_room}: Patient temperature = {temperature:.2f}°F -> Unhealthy! Prescribing medicine...")
+            self.performance += 1  # performance increases after treatment
+        else:
+            print(f"Room {self.current_room}: Patient temperature = {temperature:.2f}°F -> Healthy, no medicine needed.")
+    
+    def move(self):
+        """Move to the next room (0 <-> 1)"""
+        self.current_room = 1 - self.current_room  # toggle between 0 and 1
+        self.performance -= 1  # moving decreases performance
+        print(f"Agent moved to Room {self.current_room}")
+    
+    def run(self, steps=4):
+        """Run the agent for a given number of steps"""
+        for _ in range(steps):
+            temperature = self.sense_temperature()
+            self.treat_patient(temperature)
+            self.move()
+        print("\nFinal Performance Score:", self.performance)
+
+
+# Main Program
+agent = MedicinePrescribingAgent()
+agent.run(steps=6)  # Run for 6 cycles
+```
+## Output:
+
+<img width="1067" height="317" alt="image" src="https://github.com/user-attachments/assets/b00eddca-e4f8-411c-b54b-379565882e10" />
+
+## Result:
+
+Thus,the AI agent is develped to solve the given AI problem.
