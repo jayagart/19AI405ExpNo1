@@ -1,6 +1,7 @@
 <h1>ExpNo 1 :Developing AI Agent with PEAS Description</h1>
-<h3>Name: Gowtham C </h3>
-<h3>Register Number: 212224240046</h3>
+<h3>Name: JAYAGAR.T </h3>
+<h3>Register Number: 212224220042</h3>
+<h3>Date: 20-4-2026  </h3>
 
 
 <h3>AIM:</h3>
